@@ -1,0 +1,32 @@
+name: Create HTML file
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+  
+    - name: create Html file
+      run: |
+        echo "<!DOCTYPE html>
+        <html>
+        <head>
+          <title>my html file</title>
+        </head>
+        <body>
+          <h1>Hello</h1>
+        </body>
+        </html>" > index.html
+    
+    - name: Commit changes
+      run: |
+        git config user.name "nivi30"
+        git config user.email "nivethavelu.98@gmail.com"
+        git add index.html
+        git commit -m "create html file"
+        git push
