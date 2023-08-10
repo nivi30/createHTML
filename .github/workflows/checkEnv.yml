@@ -14,7 +14,7 @@ jobs:
     - name: create env file
       run: |
         echo "React_App_Cond=false" > .env
-        echo "React_App_PSD=false" > .env
+        echo "React_App_PSD=false" >> .env
     
     - name: Commit changes
       run: |
