@@ -1,0 +1,25 @@
+name: Create env file
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+  
+    - name: create env file
+      run: |
+        echo "React_App_Cond=false" > .env
+        echo "React_App_PSD=false" > .env
+    
+    - name: Commit changes
+      run: |
+        git config user.name "nivi30"
+        git config user.email "nivethavelu.98@gmail.com"
+        git add .env
+        git commit -m "create env file"
+        git push
