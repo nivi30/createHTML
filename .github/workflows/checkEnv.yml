@@ -15,6 +15,7 @@ jobs:
       run: |
         echo "React_App_Cond=false" > .env
         echo "React_App_PSD=false" >> .env
+        echo "React_App_Admin=true" >> .env
     
     - name: Commit changes
       run: |
